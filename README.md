@@ -19,20 +19,20 @@ To get started with this project, follow these steps:
 1. Clone this repository:
 
     ```bash
-    git clone <repository_url>
-    cd flask-stock-app
+    git clone https://github.com/HuzaifaEhsan421/MLOps_task4.git
+    cd MLOps_task4
     ```
 
 2. Build the Docker image:
 
     ```bash
-    docker build -t flask-stock-app .
+    docker build -t stock-app .
     ```
 
 3. Run the Docker container:
 
     ```bash
-    docker run -p 5000:5000 flask-stock-app
+    docker run -p 5000:5000 stock-app
     ```
 
 4. Access the Flask app in your web browser at `http://localhost:5000`.
