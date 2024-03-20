@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stock Price Prediction</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-image: url("{{ url_for('static', filename='bg1.jpg') }}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 50px;
+        color: antiquewhite;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      form {
+        text-align: center;
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      input[type="date"] {
+        padding: 5px;
+        border-radius: 5px;
+      }
+
+      input[type="submit"] {
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      h2 {
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      img {
+        display: block;
+        margin: 0 auto;
+        max-width: 80%;
+        height: auto;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Stock Price Prediction</h1>
+
+    <form action="/" method="POST">
+      <label for="start_date">Start Date:</label>
+      <input
+        type="date"
+        id="start_date"
+        name="start_date"
+        required
+      /><br /><br />
+
+      <label for="end_date">End Date:</label>
+      <input type="date" id="end_date" name="end_date" required /><br /><br />
+
+      <input type="submit" value="Submit" />
+    </form>
+
+    {% if graph %}
+    <h2>Stock Price Graph</h2>
+
+    <h1>Prediction Using Random Forest Regressor</h1>
+    <img
+      src="{{ url_for('static', filename='graph.png') }}"
+      alt="Stock Price Graph"
+    />
+    {% endif %}
+  </body>
+</html>
